@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>30-Day Study Plan for 75+ Marks</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    h1, h3 {
+      text-align: center;
+    }
+    .phase-title {
+      cursor: pointer;
+      background-color: #0d6efd;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+      user-select: none;
+    }
+    .phase-content {
+      margin-top: 10px;
+      display: none;
+    }
+    table th {
+      text-align: center;
+    }
+    td, th {
+      vertical-align: middle;
+      text-align: center;
+    }
+    .routine {
+      background-color: #ffc107;
+      color: black;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 8px;
+    }
+    .progress {
+      height: 25px;
+      margin-bottom: 10px;
+    }
+    .Hindi { background-color: #f8d7da; }       /* red-ish */
+    .Maths { background-color: #d1ecf1; }       /* blue-ish */
+    .GK { background-color: #d4edda; }          /* green-ish */
+    .Science { background-color: #fff3cd; }     /* yellow-ish */
+    .FullTest { background-color: #cce5ff; }    /* light blue */
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🗓️ 30-Day Study Plan for 75+ Marks</h1>
+
+  <!-- Progress Bars & Streak -->
+  <div class="mb-3">
+    <h3>Overall Progress: <span id="progress-text">0%</span></h3>
+    <div class="progress mb-2">
+      <div id="progress-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+    </div>
+    <h5>Subject-wise Progress:</h5>
+    <div>Hindi: <div class="progress"><div id="progress-hindi" class="progress-bar bg-danger" style="width:0%"></div></div></div>
+    <div>Maths: <div class="progress"><div id="progress-maths" class="progress-bar bg-info" style="width:0%"></div></div></div>
+    <div>GK: <div class="progress"><div id="progress-gk" class="progress-bar bg-success" style="width:0%"></div></div></div>
+    <div>Science: <div class="progress"><div id="progress-science" class="progress-bar bg-warning" style="width:0%"></div></div></div>
+    <div>Full Tests: <div class="progress"><div id="progress-fulltest" class="progress-bar bg-primary" style="width:0%"></div></div></div>
+    <h3>Current Streak: <span id="streak-count">0</span> days</h3>
+  </div>
+
+  <!-- Phase 1 -->
+  <div class="phase-title" onclick="togglePhase('phase1')">📅 Phase 1: Basics & Foundation (Days 1–10)</div>
+  <div class="phase-content" id="phase1">
+    <p>Goal: Build strong base in all 4 subjects.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Done</th>
+            <th>Day</th>
+            <th>Subjects</th>
+            <th>Topics</th>
+            <th>Tasks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="Hindi"><td><input type="checkbox" data-day="1" data-subject="Hindi"></td><td>1</td><td>Hindi</td><td>संज्ञा, सर्वनाम, विशेषण</td><td>Read Lucent Hindi + write examples</td></tr>
+          <tr class="Maths"><td><input type="checkbox" data-day="2" data-subject="Maths"></td><td>2</td><td>Maths</td><td>Percentage, Ratio & Proportion</td><td>Practice 20 sums</td></tr>
+          <tr class="GK"><td><input type="checkbox" data-day="3" data-subject="GK"></td><td>3</td><td>GK</td><td>Bihar State Overview (Rivers, Districts)</td><td>Read Lucent GK (Bihar section)</td></tr>
+          <tr class="Science"><td><input type="checkbox" data-day="4" data-subject="Science"></td><td>4</td><td>Science</td><td>Physics – Motion, Force</td><td>Read NCERT + short notes</td></tr>
+          <tr class="Hindi"><td><input type="checkbox" data-day="5" data-subject="Hindi"></td><td>5</td><td>Hindi</td><td>वचन, लिंग, वाक्य सुधार</td><td>Practice exercises</td></tr>
+          <tr class="Maths"><td><input type="checkbox" data-day="6" data-subject="Maths"></td><td>6</td><td>Maths</td><td>Profit-Loss, Simple Interest</td><td>Solve 20 questions</td></tr>
+          <tr class="GK"><td><input type="checkbox" data-day="7" data-subject="GK"></td><td>7</td><td>GK</td><td>Indian Constitution (Articles, President, PM)</td><td>1-hour Lucent reading + quiz</td></tr>
+          <tr class="Science"><td><input type="checkbox" data-day="8" data-subject="Science"></td><td>8</td><td>Science</td><td>Chemistry – Matter, Elements</td><td>Revise NCERT + 15 MCQs</td></tr>
+          <tr class="Hindi"><td><input type="checkbox" data-day="9" data-subject="Hindi"></td><td>9</td><td>Hindi</td><td>विलोम, पर्यायवाची, मुहावरे</td><td>Practice 20 examples</td></tr>
+          <tr class="GK"><td><input type="checkbox" data-day="10" data-subject="GK"></td><td>10</td><td>GK</td><td>History of Bihar & Freedom Movement</td><td>Notes + 1 quiz</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Phase 2 -->
+  <div class="phase-title" onclick="togglePhase('phase2')">📅 Phase 2: Practice & Strength (Days 11–20)</div>
+  <div class="phase-content" id="phase2">
+    <p>Goal: Increase speed & accuracy with topic-wise tests.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Done</th>
+            <th>Day</th>
+            <th>Subjects</th>
+            <th>Topics</th>
+            <th>Tasks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="Maths"><td><input type="checkbox" data-day="11" data-subject="Maths"></td><td>11</td><td>Maths</td><td>Compound Interest, Time-Speed-Distance</td><td>Practice test</td></tr>
+          <tr class="Science"><td><input type="checkbox" data-day="12" data-subject="Science"></td><td>12</td><td>Science</td><td>Biology – Human Body, Plants</td><td>15 MCQs</td></tr>
+          <tr class="GK"><td><input type="checkbox" data-day="13" data-subject="GK"></td><td>13</td><td>GK</td><td>Indian Geography + Rivers</td><td>Map-based study</td></tr>
+          <tr class="Hindi"><td><input type="checkbox" data-day="14" data-subject="Hindi"></td><td>14</td><td>Hindi</td><td>वाक्य रचना, अनेकार्थक शब्द</td><td>Grammar practice</td></tr>
+          <tr class="FullTest"><td><input type="checkbox" data-day="15" data-subject="FullTest"></td><td>15</td><td>Full Test 1</td><td>100 Questions (All Subjects)</td><td>Attempt + Analyze mistakes</td></tr>
+          <tr class="GK"><td><input type="checkbox" data-day="16" data-subject="GK"></td><td>16</td><td>GK</td><td>Current Affairs (Last 3 months)</td><td>AffairsCloud / Adda247 PDF</td></tr>
+          <tr class="Maths"><td><input type="checkbox" data-day="17" data-subject="Maths"></td><td>17</td><td>Maths</td><td>Average, HCF & LCM</td><td>Practice set</td></tr>
+          <tr class="Science"><td><input type="checkbox" data-day="18" data-subject="Science"></td><td>18</td><td>Science</td><td>Chemistry – Acid, Base, Salt</td><td>Read + solve 15 MCQs</td></tr>
+          <tr class="GK"><td><input type="checkbox" data-day="19" data-subject="GK"></td><td>19</td><td>GK</td><td>Indian Economy + Bihar Schemes</td><td>Read + revise notes</td></tr>
+          <tr class="FullTest"><td><input type="checkbox" data-day="20" data-subject="FullTest"></td><td>20</td><td>Full Test 2</td><td>100 Questions</td><td>Time yourself (2 hours)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Phase 3 -->
+  <div class="phase-title" onclick="togglePhase('phase3')">📅 Phase 3: Revision & Real Exam Practice (Days 21–30)</div>
+  <div class="phase-content" id="phase3">
+    <p>Goal: Focus on revision, mock tests, and weak areas.</p>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Done</th>
+            <th>Day</th>
+            <th>Focus</th>
+            <th>Tasks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="Hindi"><td><input type="checkbox" data-day="21" data-subject="Hindi"></td><td>21</td><td>Hindi & GK revision</td><td>Revise notes, idioms, current affairs</td></tr>
+          <tr class="Science"><td><input type="checkbox" data-day="22" data-subject="Science"></td><td>22</td><td>Maths & Science revision</td><td>Quick recap of formulas & definitions</td></tr>
+          <tr class="FullTest"><td><input type="checkbox" data-day="23" data-subject="FullTest"></td><td>23</td><td>Full Mock Test 3</td><td>Analyze weak topics</td></tr>
+          <tr class="Science"><td><input type="checkbox" data-day="24" data-subject="Science"></td><td>24</td><td>Weak Topics Revision</td><td>Re-learn mistakes</td></tr>
+          <tr class="GK"><td><input type="checkbox" data-day="25" data-subject="GK"></td><td>25</td><td>GK</td><td>Bihar Ministers, CM Schemes, Important Dates</td></tr>
+          <tr class="Hindi"><td><input type="checkbox" data-day="26" data-subject="Hindi"></td><td>26</td><td>Hindi</td><td>Practice comprehension + grammar mix test</td></tr>
+          <tr class="Science"><td><input type="checkbox" data-day="27" data-subject="Science"></td><td>27</td><td>Science</td><td>Physics & Chemistry formula recap</td></tr>
+          <tr class="Maths"><td><input type="checkbox" data-day="28" data-subject="Maths"></td><td>28</td><td>Maths</td><td>Time & Work, Percentage quick test</td></tr>
+          <tr class="FullTest"><td><input type="checkbox" data-day="29" data-subject="FullTest"></td><td>29</td><td>Full Mock Test 4</td><td>Attempt + evaluate</td></tr>
+          <tr class="FullTest"><td><input type="checkbox" data-day="30" data-subject="FullTest"></td><td>30</td><td>Final Revision Day</td><td>Read all short notes + relax before exam</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Daily Routine -->
+  <div class="routine">
+    <h2>📘 Daily Routine Example</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Task</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>6:00 – 7:00</td><td>GK + Current Affairs</td></tr>
+        <tr><td>8:00 – 9:00</td><td>Maths Practice</td></tr>
+        <tr><td>10:00 – 11:00</td><td>Hindi Grammar</td></tr>
+        <tr><td>4:00 – 5:00</td><td>Science Revision</td></tr>
+        <tr><td>7:00 – 8:00</td><td>Quiz / Mock Test</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  // Toggle phase visibility
+  function togglePhase(id) {
+    const content = document.getElementById(id);
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  }
+
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+  // Load saved state from localStorage
+  checkboxes.forEach(cb => {
+    const day = cb.dataset.day;
+    if(localStorage.getItem('day_' + day) === 'true') cb.checked = true;
+
+    cb.addEventListener('change', () => {
+      localStorage.setItem('day_' + day, cb.checked);
+      updateProgress();
+      updateStreak();
+    });
+  });
+
+  function updateProgress() {
+    const total = checkboxes.length;
+    const completed = Array.from(checkboxes).filter(cb => cb.checked).length;
+    const percent = Math.round((completed / total) * 100);
+    document.getElementById('progress-bar').style.width = percent + '%';
+    document.getElementById('progress-text').innerText = percent + '%';
+
+    // Subject-wise progress
+    const subjects = ['Hindi', 'Maths', 'GK', 'Science', 'FullTest'];
+    subjects.forEach(sub => {
+      const allSub = Array.from(checkboxes).filter(cb => cb.dataset.subject === sub);
+      const doneSub = allSub.filter(cb => cb.checked);
+      const subPercent = allSub.length ? Math.round((doneSub.length / allSub.length) * 100) : 0;
+      document.getElementById('progress-' + sub.toLowerCase()).style.width = subPercent + '%';
+    });
+  }
+
+  function updateStreak() {
+    let streak = 0;
+    for(let i = 1; i <= 30; i++) {
+      const dayDone = localStorage.getItem('day_' + i) === 'true';
+      if(dayDone) streak++;
+      else break; // streak broken
+    }
+    document.getElementById('streak-count').innerText = streak;
+  }
+
+  // Initialize progress and streak
+  updateProgress();
+  updateStreak();
+</script>
+
+</body>
+</html>
